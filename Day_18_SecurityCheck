@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Day_18_SecurityCheck {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Create a password: ");
+        String password = scanner.nextLine();
+        
+        if (password.length() < 8) {
+            System.out.println("❌ Status: Weak (Too short)");
+        } else if (!password.matches(".*\\d.*")) {
+            System.out.println("⚠️ Status: Medium (Needs a number)");
+        } else {
+            System.out.println("🔒 Status: Strong");
+        }
+        
+        scanner.close();
+    }
+}
